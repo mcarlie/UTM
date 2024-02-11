@@ -97,7 +97,7 @@ struct UTMAppleConfigurationDrive: UTMConfigurationDrive {
     
     func vzDiskImage() throws -> VZDiskImageStorageDeviceAttachment? {
         if let imageURL = imageURL {
-            return try VZDiskImageStorageDeviceAttachment(url: imageURL, readOnly: isReadOnly)
+            return try VZDiskImageStorageDeviceAttachment(url: imageURL, readOnly: isReadOnly, cachingMode: .cached, synchronizationMode: .full)
         } else {
             return nil
         }
